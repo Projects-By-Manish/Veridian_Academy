@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veridian Design Academy | UX & Product Design Careers</title>
+    <meta
+      name="description"
+      content="Build strong UX & Product Design foundations with live mentorship, real projects, and career-ready skills. Founded by Venky, 30+ years in design leadership."
+    />
+    <meta name="author" content="Veridian Design Studio" />
+    <meta
+      property="og:title"
+      content="Veridian Design Academy | UX & Product Design Careers"
+    />
+    <meta
+      property="og:description"
+      content="Build strong UX & Product Design foundations with live mentorship and real projects."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cambo&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip to main content (a11y) -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Primary navigation">
+      <div class="container">
+        <a href="#" aria-label="Veridian Design Academy — Home"
+          ><img
+            src="assets/veridian-logo.png"
+            alt="Veridian"
+            class="navbar-logo"
+        /></a>
+        <div class="navbar-links">
+          <a href="#courses">Courses</a>
+          <a href="#founder">About</a>
+          <a href="#why">Why Us</a>
+          <button
+            class="btn btn-gold"
+            onclick="
+              document
+                .getElementById('cta')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Apply Now
+          </button>
+        </div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          ☰
+        </button>
+      </div>
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+        role="region"
+        aria-label="Mobile navigation"
+      >
+        <a href="#courses" onclick="closeMobile()">Courses</a>
+        <a href="#founder" onclick="closeMobile()">About</a>
+        <a href="#why" onclick="closeMobile()">Why Us</a>
+        <button
+          class="btn btn-gold"
+          style="width: 100%; justify-content: center"
+          onclick="
+            closeMobile();
+            document
+              .getElementById('cta')
+              .scrollIntoView({ behavior: 'smooth' });
+          "
+        >
+          Apply Now
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div
+          class="hero-bg"
+          role="img"
+          aria-label="Abstract design background"
+          style="background-image: url(&quot;assets/hero-bg.jpg&quot;)"
+        ></div>
+        <div class="hero-overlay hero-gradient" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div
+            class="hero-badge anim-fade-up visible"
+            style="animation-delay: 0s"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"
+              />
+              <path d="M5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1z" />
+            </svg>
+            <span>Applications open for 2026 cohorts</span>
+          </div>
+          <h1
+            id="hero-heading"
+            class="anim-fade-up visible"
+            style="animation-delay: 0.15s"
+          >
+            Design is not just a skill.<br /><em>It's a way of thinking.</em>
+          </h1>
+          <p
+            class="hero-sub anim-fade-up visible"
+            style="animation-delay: 0.3s"
+          >
+            Build strong design foundations, real-world judgment, and the
+            confidence to launch your UX &amp; Product Design career — mentored
+            directly by industry veterans.
+          </p>
+          <div
+            class="hero-buttons anim-fade-up visible"
+            style="animation-delay: 0.45s"
+          >
+            <button
+              class="btn btn-gold btn-lg"
+              onclick="
+                document
+                  .getElementById('cta')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+            >
+              Apply for the Founding Cohort →
+            </button>
+            <button
+              class="btn btn-outline btn-lg"
+              onclick="
+                document
+                  .getElementById('founder')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+            >
+              Meet the Founder
+            </button>
+          </div>
+          <p
+            class="hero-note anim-fade-up visible"
+            style="animation-delay: 0.6s"
+          >
+            Application-based admissions · Max 12 students per cohort · Next
+            cohort starts soon
+          </p>
+          <div
+            class="hero-stats anim-fade-up visible"
+            style="animation-delay: 0.8s"
+            role="list"
+            aria-label="Key statistics"
+          >
+            <div role="listitem">
+              <span class="stat-val">30+</span>Years Experience
+            </div>
+            <div class="divider" aria-hidden="true"></div>
+            <div role="listitem">
+              <span class="stat-val">100s</span>Designers Mentored
+            </div>
+            <div class="divider" aria-hidden="true"></div>
+            <div role="listitem">
+              <span class="stat-val">12</span>Max Cohort Size
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pain Points -->
+      <section class="section section-alt" aria-labelledby="pain-heading">
+        <div class="container">
+          <div class="section-header anim-fade-up">
+            <span class="section-label">The real problem</span>
+            <h2 id="pain-heading" class="section-title">
+              You know the tools. But do you have the judgment?
+            </h2>
+            <p class="section-desc">
+              Most graduates leave college knowing Figma but lacking the design
+              thinking, critique exposure, and structured problem-solving that
+              employers actually look for.
+            </p>
+          </div>
+          <div class="pain-grid" role="list">
+            <article class="pain-card anim-fade-up" role="listitem">
+              <div class="pain-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path
+                    d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.49 0a6 6 0 0 1 0-8.49"
+                  />
+                  <line x1="12" y1="2" x2="12" y2="6" />
+                </svg>
+              </div>
+              <h3>Lost in direction</h3>
+              <p>
+                You know tools but not how real designers think and make
+                decisions.
+              </p>
+            </article>
+            <article class="pain-card anim-fade-up" role="listitem">
+              <div class="pain-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3>No real exposure</h3>
+              <p>
+                Assignments don't prepare you. You need real projects, real
+                critique, real stakes.
+              </p>
+            </article>
+            <article class="pain-card anim-fade-up" role="listitem">
+              <div class="pain-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              </div>
+              <h3>Interview anxiety</h3>
+              <p>
+                Your portfolio feels amateur. You fear interviews because
+                nobody's challenged your work.
+              </p>
+            </article>
+            <article class="pain-card anim-fade-up" role="listitem">
+              <div class="pain-icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <h3>No critique culture</h3>
+              <p>
+                You've never had a senior designer tear apart your work — and
+                show you how to rebuild it better.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Courses -->
+      <section id="courses" class="section" aria-labelledby="courses-heading">
+        <div class="container">
+          <div class="section-header anim-fade-up">
+            <span class="section-label">Programs</span>
+            <h2 id="courses-heading" class="section-title">
+              Choose your path to design mastery
+            </h2>
+            <p class="section-desc">
+              Small cohorts. Real mentorship. Application-based. Built for
+              outcomes — not certificates.
+            </p>
+          </div>
+          <div class="courses-grid">
+            <!-- Course 1 -->
+            <article class="course-card anim-fade-up">
+              <span class="course-badge">Start Here</span>
+              <h3>Design Foundations Bootcamp</h3>
+              <div class="course-meta">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-clock"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  4 weeks</span
+                ><span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-users"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Max 12</span
+                >
+              </div>
+              <p class="course-desc">
+                Build your design fundamentals from scratch. Learn to think like
+                a designer, understand visual hierarchy, and develop judgment —
+                not just tool skills.
+              </p>
+              <ul class="course-highlights" aria-label="Course highlights">
+                <li>Design thinking fundamentals</li>
+                <li>Visual hierarchy &amp; composition</li>
+                <li>Live mentor critique sessions</li>
+                <li>Portfolio-ready project</li>
+              </ul>
+              <div class="course-price">₹20,000</div>
+              <button class="btn btn-primary">Apply Now →</button>
+            </article>
+            <!-- Course 2 (Popular) -->
+            <article class="course-card popular anim-fade-up">
+              <div class="course-pop-badge">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-star mr-1"
+                >
+                  <path
+                    d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
+                  ></path>
+                </svg>
+                Most Popular
+              </div>
+              <span class="course-badge">Most Popular</span>
+              <h3>UI/UX Short Course</h3>
+              <div class="course-meta">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-clock"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  6 weeks</span
+                ><span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-users"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Max 12</span
+                >
+              </div>
+              <p class="course-desc">
+                Go from curious to confident. Master end-to-end UX process —
+                research, wireframing, prototyping, and design systems — with
+                hands-on industry projects.
+              </p>
+              <ul class="course-highlights" aria-label="Course highlights">
+                <li>End-to-end UX process</li>
+                <li>Real client project briefs</li>
+                <li>Design system fundamentals</li>
+                <li>Interview prep &amp; portfolio review</li>
+              </ul>
+              <div class="course-price">₹45,000</div>
+              <button
+                class="btn btn-gold"
+                style="width: 100%; justify-content: center"
+              >
+                Apply Now →
+              </button>
+            </article>
+            <!-- Course 3 -->
+            <article class="course-card anim-fade-up">
+              <span class="course-badge">Career Accelerator</span>
+              <h3>UX Intensive Bootcamp</h3>
+              <div class="course-meta">
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-clock"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  12 weeks</span
+                ><span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-users"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Max 12</span
+                >
+              </div>
+              <p class="course-desc">
+                The most comprehensive program for serious career switchers.
+                Immersive mentorship, live projects, and 1:1 coaching to make
+                you truly industry-ready.
+              </p>
+              <ul class="course-highlights" aria-label="Course highlights">
+                <li>1:1 mentorship with Venky</li>
+                <li>3 portfolio-grade case studies</li>
+                <li>Mock interviews &amp; feedback</li>
+                <li>Interview guidance &amp; hiring preparation support</li>
+              </ul>
+              <div class="course-price">₹1,20,000</div>
+              <button class="btn btn-gold">Apply Now →</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Founder -->
+      <section
+        id="founder"
+        class="section section-alt"
+        aria-labelledby="founder-heading"
+      >
+        <div class="container">
+          <div class="founder-grid">
+            <div class="founder-img-wrap anim-fade-left">
+              <div class="founder-img-inner">
+                <img
+                  src="assets/founder.jpg"
+                  alt="Venkatesh Balasubramaniam, Founder of Veridian Design Academy"
+                  class="founder-img"
+                />
+                <div class="founder-badge-box" aria-hidden="true">
+                  30+<br />years
+                </div>
+              </div>
+            </div>
+            <div class="anim-fade-right">
+              <span class="section-label">Meet the Mentor</span>
+              <h2
+                id="founder-heading"
+                class="section-title"
+                style="text-align: left; margin-top: 0.75rem"
+              >
+                Venkatesh Balasubramaniam
+              </h2>
+              <blockquote class="founder-quote">
+                "Strong thinking creates strong careers. I don't teach software
+                — I teach judgment.""
+              </blockquote>
+              <p class="founder-text">
+                With nearly three decades of experience in global SaaS and
+                technology organizations, Venky has mentored hundreds of
+                designers — helping them think clearly, present confidently, and
+                grow sustainably.
+              </p>
+              <p class="founder-text">
+                Veridian Design Academy was founded with one clear intention: to
+                help aspiring designers build strong fundamentals and real-world
+                confidence before entering the industry.
+              </p>
+              <p class="founder-highlight">
+                Mentored 100+ designers across SaaS &amp; product organizations
+              </p>
+              <div class="founder-info-grid">
+                <div class="founder-info-item">
+                  <strong>SaaS &amp; Tech</strong><span>Global Experience</span>
+                </div>
+                <div class="founder-info-item">
+                  <strong>Founder-Led</strong><span>Approach</span>
+                </div>
+                <div class="founder-info-item">
+                  <strong>Chennai</strong><span>Location</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us -->
+      <section id="why" class="section" aria-labelledby="why-heading">
+        <div class="container">
+          <div class="section-header anim-fade-up">
+            <span class="section-label">Honest answers</span>
+            <h2 id="why-heading" class="section-title">
+              We know what you're thinking
+            </h2>
+            <p class="section-desc">
+              These are the three biggest questions we hear. Here's our straight
+              answer.
+            </p>
+          </div>
+          <div class="why-grid">
+            <article class="why-card anim-fade-up">
+              <div class="why-icon" aria-hidden="true">
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <h3>"Will I actually get a job?"</h3>
+              <p>
+                Every course is built around industry-readiness — not theory.
+                You'll graduate with portfolio-grade case studies, mock
+                interview experience, and the judgment employers look for. We
+                don't promise jobs. We build capability employers respect.
+              </p>
+            </article>
+            <article class="why-card anim-fade-up">
+              <div class="why-icon" aria-hidden="true">
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3>"Is ₹20k worth it when free content exists?"</h3>
+              <p>
+                Free content teaches tools. Employers hire judgment. At
+                Veridian, you get live mentorship, structured critique, real
+                project experience, and direct access to a founder with 30+
+                years of industry experience.
+              </p>
+            </article>
+            <article class="why-card anim-fade-up">
+              <div class="why-icon" aria-hidden="true">
+                <svg class="icon icon-lg" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 8 3 12 0v-5" />
+                </svg>
+              </div>
+              <h3>"Is this legit?"</h3>
+              <p>
+                Application-based admissions. Founder-led sessions. A maximum
+                cohort of 12 students. We don't scale at the cost of quality —
+                and every student is personally reviewed before admission.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Admission -->
+      <section class="section section-alt" aria-labelledby="admission-heading">
+        <div class="container">
+          <div class="section-header anim-fade-up">
+            <span class="section-label">Admissions</span>
+            <h2 id="admission-heading" class="section-title">
+              How the Admission Process Works
+            </h2>
+          </div>
+          <div class="admission-grid">
+            <div
+              class="admission-steps anim-fade-left"
+              role="list"
+              aria-label="Admission steps"
+            >
+              <div class="admission-step" role="listitem">
+                <span class="step-num" aria-hidden="true">1️⃣</span>
+                <div>
+                  <h3>Submit Application</h3>
+                  <p>Scan QR &amp; Apply</p>
+                </div>
+              </div>
+              <div class="admission-step" role="listitem">
+                <span class="step-num" aria-hidden="true">2️⃣</span>
+                <div><h3>Application Review</h3></div>
+              </div>
+              <div class="admission-step" role="listitem">
+                <span class="step-num" aria-hidden="true">3️⃣</span>
+                <div><h3>Short Interaction Call</h3></div>
+              </div>
+              <div class="admission-step" role="listitem">
+                <span class="step-num" aria-hidden="true">4️⃣</span>
+                <div><h3>Selection Confirmation</h3></div>
+              </div>
+              <p class="admission-note">
+                This is not an open enrollment program. Every cohort is
+                carefully selected.
+              </p>
+            </div>
+            <div class="qr-wrap anim-fade-right">
+              <div class="qr-box">
+                <img
+                  src="assets/qr-code.png"
+                  alt="QR code — scan to submit your application to Veridian Design Academy"
+                />
+              </div>
+              <p class="qr-text">Scan to submit your application</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section id="cta" class="cta hero-gradient" aria-labelledby="cta-heading">
+        <div class="cta-glow1" aria-hidden="true"></div>
+        <div class="cta-glow2" aria-hidden="true"></div>
+        <div class="container cta-content anim-fade-up">
+          <h2 id="cta-heading">
+            Your career in design starts with one decision
+          </h2>
+          <p>
+            Don't wait until you feel ready. The best designers became great by
+            starting before they felt qualified. Apply today — we'll help you
+            get there.
+          </p>
+          <button class="btn btn-gold btn-lg">Start Your Application →</button>
+          <p class="sub-note">
+            Scan the QR code to submit your application form for review.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-brand">
+          <img src="assets/veridian-logo.png" alt="Veridian" />
+          <span>Design Academy</span>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#courses">Courses</a>
+          <a href="#founder">About</a>
+          <a
+            href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3ccfae9fee5e8e5ede2e8e9ffe5ebe2a2e5e2"
+            >Contact</a
+          >
+        </nav>
+        <div class="footer-info">
+          <p>
+            For queries:
+            <a
+              href="/cdn-cgi/l/email-protection#95fdf0f9f9fad5e3f0e7fcf1fcf4fbf1f0e6fcf2fbbbfcfb"
+              ><span
+                class="__cf_email__"
+                data-cfemail="ef878a838380af998a9d868b868e818b8a9c868881c18681"
+                >[email&#160;protected]</span
+              ></a
+            >
+            · <a href="tel:+919500029914">+91 9500029914</a> · Chennai (Hybrid
+            Program)
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="scripts.js" defer></script>
+  </body>
+</html>
