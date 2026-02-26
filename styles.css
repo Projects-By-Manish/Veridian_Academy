@@ -46,7 +46,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Cambo", serif;
+  font-family: serif;
 }
 a {
   color: inherit;
@@ -365,7 +365,7 @@ ul {
 }
 .hero-stats .stat-val {
   display: block;
-  font-family: "Cambo", serif;
+  font-family: serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--fg);
@@ -391,7 +391,7 @@ ul {
   .hero-stats {
     gap: 2rem;
     font-size: 0.875rem;
-    font-family: "Cambo", serif;
+    font-family: serif;
   }
 }
 
@@ -457,6 +457,7 @@ ul {
   color: var(--primary);
 }
 .pain-card h3 {
+  font-family: "Inter", serif;
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -516,6 +517,7 @@ ul {
   width: fit-content;
 }
 .course-card h3 {
+  font-family: "Inter", erif;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -554,7 +556,7 @@ ul {
   margin-top: 6px;
 }
 .course-price {
-  font-family: "Cambo", serif;
+  font-family: serif;
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -609,7 +611,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cambo", serif;
+  font-family: serif;
   font-size: 0.875rem;
   font-weight: 600;
   text-align: center;
@@ -617,7 +619,7 @@ ul {
 }
 .founder-quote {
   position: relative;
-  font-family: "Cambo", serif;
+  font-family: serif;
   font-style: italic;
   font-size: 1.125rem;
   line-height: 1.6;
@@ -695,6 +697,7 @@ ul {
   color: var(--primary);
 }
 .why-card h3 {
+  font-family: "Inter", serif;
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -732,6 +735,7 @@ ul {
   font-size: 1.5rem;
 }
 .admission-step h3 {
+  font-family: "Inter", serif;
   font-weight: 600;
 }
 .admission-step p {
@@ -849,7 +853,7 @@ ul {
   filter: brightness(0) invert(1);
 }
 .footer-brand span {
-  font-family: "Cambo", serif;
+  font-family: serif;
   font-weight: 600;
   font-size: 0.875rem;
 }
