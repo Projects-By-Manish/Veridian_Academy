@@ -96,7 +96,7 @@
         aria-label="Abstract design background"
         style="background-image: url(&quot;assets/hero-bg.jpg&quot;)"
       ></div>
-      <div class="hero-overlay hero-gradient" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-content">
         <div
           class="hero-badge anim-fade-up visible"
@@ -642,22 +642,26 @@
       </section>
 
       <!-- CTA -->
-      <section id="cta" class="cta hero-gradient" aria-labelledby="cta-heading">
+      <section id="cta" class="cta" aria-labelledby="cta-heading">
         <div class="cta-glow1" aria-hidden="true"></div>
         <div class="cta-glow2" aria-hidden="true"></div>
-        <div class="container cta-content anim-fade-up">
-          <h2 id="cta-heading">
-            Your career in design starts with one decision
-          </h2>
-          <p>
-            Don't wait until you feel ready. The best designers became great by
-            starting before they felt qualified. Apply today — we'll help you
-            get there.
-          </p>
-          <button class="btn btn-gold btn-lg">Start Your Application →</button>
-          <p class="sub-note">
-            Scan the QR code to submit your application form for review.
-          </p>
+        <div class="container">
+          <div class="cta-content anim-fade-up">
+            <h2 id="cta-heading">
+              Your career in design starts with one decision
+            </h2>
+            <p>
+              Don't wait until you feel ready. The best designers became great
+              by starting before they felt qualified. Apply today — we'll help
+              you get there.
+            </p>
+            <button class="btn btn-gold btn-lg">
+              Start Your Application →
+            </button>
+            <p class="sub-note">
+              Scan the QR code to submit your application form for review.
+            </p>
+          </div>
         </div>
       </section>
     </main>
@@ -672,66 +676,31 @@
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="#courses">Courses</a>
           <a href="#founder">About</a>
-          <a
-            href="/cdn-cgi/l/email-protection#8ce4e9e0e0e3ccfae9fee5e8e5ede2e8e9ffe5ebe2a2e5e2"
-            >Contact</a
-          >
+          <a href="hello@veridiandesign.in">Contact</a>
         </nav>
         <div class="footer-info">
           <p>
             For queries:
-            <a
-              href="/cdn-cgi/l/email-protection#95fdf0f9f9fad5e3f0e7fcf1fcf4fbf1f0e6fcf2fbbbfcfb"
-              ><span
+            <a href="hello@veridiandesign.in">
+              <span
                 class="__cf_email__"
                 data-cfemail="ef878a838380af998a9d868b868e818b8a9c868881c18681"
-                ><span
+              >
+                <span
                   class="__cf_email__"
                   data-cfemail="19717c757576596f7c6b707d707877377077"
-                  >[email&#160;protected]</span
+                  >hello@veridiandesign.in</span
                 ></span
               ></a
             >
             · <a href="tel:+919500029914">+91 9500029914</a> · Chennai (Hybrid
             Program)
           </p>
+          <p>&copy; 2026 Veridian Design Studio.</p>
         </div>
       </div>
     </footer>
 
-    <script>
-      // Scroll animations
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      document
-        .querySelectorAll(
-          ".anim-fade-up, .anim-fade-left, .anim-fade-right, .fade-in",
-        )
-        .forEach((el) => {
-          observer.observe(el);
-        });
-
-      // Mobile menu
-      const hamburger = document.getElementById("hamburger");
-      const mobileMenu = document.getElementById("mobileMenu");
-      function closeMobile() {
-        mobileMenu.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-      }
-      if (hamburger) {
-        hamburger.addEventListener("click", () => {
-          const isOpen = mobileMenu.classList.toggle("open");
-          hamburger.setAttribute("aria-expanded", String(isOpen));
-        });
-      }
-    </script>
+    <script src="scripts.js"></script>
   </body>
 </html>
