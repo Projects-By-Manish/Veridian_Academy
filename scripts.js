@@ -1,4 +1,33 @@
-// Mobile menu toggle
+//==================================================================
+// ===== Mobile menu toggle =====
+//==================================================================
+
+(function () {
+  var toggle = document.querySelector(".mobile-toggle");
+  var menu = document.getElementById("mobileMenu");
+  if (!toggle || !menu) return;
+
+  var menuIcon = toggle.querySelector(".menu-icon");
+  var closeIcon = toggle.querySelector(".close-icon");
+
+  toggle.addEventListener("click", function () {
+    var isOpen = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", isOpen);
+    menuIcon.style.display = isOpen ? "none" : "block";
+    closeIcon.style.display = isOpen ? "block" : "none";
+  });
+
+  menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      menuIcon.style.display = "block";
+      closeIcon.style.display = "none";
+    });
+  });
+})();
+
+/* // Mobile menu toggle
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 hamburger.addEventListener("click", () => {
@@ -12,7 +41,7 @@ function closeMobile() {
   hamburger.textContent = "☰";
   hamburger.setAttribute("aria-expanded", "false");
   hamburger.setAttribute("aria-label", "Open menu");
-}
+} */
 
 // Intersection Observer for scroll animations
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

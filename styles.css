@@ -233,6 +233,17 @@ button {
   outline-offset: 2px;
 }
 
+.mobile-toggle {
+  display: flex;
+  background: none;
+  color: var(--fg);
+  padding: 0.5rem;
+}
+
+.close-icon {
+  display: none;
+}
+
 .mobile-menu {
   display: none;
   padding: 1.5rem;
@@ -703,14 +714,14 @@ button {
 .founder-info-item {
   background: var(--card);
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   box-shadow: var(--card-shadow);
 }
 
 .founder-info-item strong {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1.5;
 }
 
@@ -986,6 +997,12 @@ a:focus-visible {
   border-radius: 4px;
 }
 
+.founder-grid .section-label {
+  display: none;
+}
+.founder-title {
+  text-align: center;
+}
 /* =============================================================================
    18. Responsive
    ============================================================================= */
@@ -995,10 +1012,15 @@ a:focus-visible {
   .navbar-links {
     display: flex;
   }
-  .hamburger {
+  .hamburger,
+  .founder-title,
+  .founder-grid .section-label,
+  .mobile-toggle {
     display: none;
   }
-
+  .founder-grid .section-label {
+    display: block;
+  }
   .section {
     padding: 6rem 0;
   }
@@ -1042,6 +1064,9 @@ a:focus-visible {
   }
   .admission-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .founder-info-item strong {
+    font-size: 0.875rem;
   }
   .why-grid {
     grid-template-columns: 1fr 1fr;
