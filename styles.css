@@ -1347,6 +1347,7 @@ a:focus-visible {
   font-size: 0.9rem;
   color: var(--muted-fg);
   line-height: 1.7;
+  text-align: left;
 }
 .week-acc-content ul {
   list-style: disc;
