@@ -963,7 +963,7 @@ button {
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.375rem;
 }
 
@@ -992,7 +992,7 @@ button {
 .footer-info {
   font-size: 0.875rem;
   color: var(--muted-fg);
-  text-align: right;
+  text-align: center;
 }
 
 .footer-info a:hover,
