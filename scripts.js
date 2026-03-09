@@ -84,6 +84,12 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     });
 }
 
+// Popular card hover swap
+document.querySelectorAll(".course-card.popular").forEach((card) => {
+  card.addEventListener("mouseenter", () => card.classList.add("hovered"));
+  card.addEventListener("mouseleave", () => card.classList.remove("hovered"));
+});
+
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {

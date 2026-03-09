@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>window.scrollTo(0, 0);</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veridian Design Academy | UX & Product Design Careers</title>
@@ -34,10 +35,7 @@
     <nav class="navbar" aria-label="Primary navigation">
       <div class="container">
         <a href="index.html" aria-label="Veridian Design Academy — Home"
-          ><img
-            src="assets/logo.png"
-            alt="Veridian"
-            class="navbar-logo"
+          ><img src="assets/logo.png" alt="Veridian" class="navbar-logo"
         /></a>
         <div class="navbar-links">
           <a href="#courses">Courses</a>
@@ -281,7 +279,7 @@
           </div>
           <div class="courses-grid">
             <!-- Course 1 -->
-            <article class="course-card anim-fade-up delay-3">
+            <article class="course-card anim-fade-up delay-3" data-course="foundations" data-hover-label="Start Here">
               <span class="course-badge">Start Here</span>
               <h3>Design Foundations Bootcamp</h3>
               <div class="course-meta">
@@ -338,26 +336,7 @@
               <button class="btn btn-primary">Apply Now →</button>
             </article>
             <!-- Course 2 (Popular) -->
-            <article class="course-card popular anim-fade-up delay-4">
-              <div class="course-pop-badge">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-star mr-1"
-                >
-                  <path
-                    d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"
-                  ></path>
-                </svg>
-                Most Popular
-              </div>
+            <article class="course-card popular anim-fade-up delay-4" data-course="uiux" data-hover-label="Most Popular">
               <span class="course-badge">Most Popular</span>
               <h3>UI/UX Short Course</h3>
               <div class="course-meta">
@@ -414,7 +393,7 @@
               <button class="btn btn-gold btn-full">Apply Now →</button>
             </article>
             <!-- Course 3 -->
-            <article class="course-card anim-fade-up delay-5">
+            <article class="course-card anim-fade-up delay-5" data-course="intensive" data-hover-label="Career Accelerator">
               <span class="course-badge">Career Accelerator</span>
               <h3>UX Intensive Bootcamp</h3>
               <div class="course-meta">
@@ -688,15 +667,129 @@
           <p>
             For queries:
             <a href="hello@veridiandesign.in" target="_blank">
-              hello@veridiandesign.in
+              <span class="__cf_email__" data-cfemail="6109040d0d0e21170413080508000f05041208060f4f080f">[email&#160;protected]</span>
             </a>
-            · <a href="tel:+919500029914" target="_blank">+91 9500029914</a> · Chennai (Hybrid Program)
+            · <a href="tel:+919500029914" target="_blank">+91 9500029914</a> ·
+            Chennai (Hybrid Program)
           </p>
           <p>&copy; 2026 Veridian Design Studio.</p>
+        </
+
+  <!-- Course Detail Pages (Page Variant) -->
+  <div class="course-detail-page" id="courseDetailPage" aria-label="Course detail">
+    <nav class="cdp-navbar">
+      <div class="container">
+        <button class="cdp-back" id="cdpBack">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Back to Courses
+        </button>
+      </div>
+    </nav>
+
+    <div class="cdp-hero">
+      <div class="container">
+        <span class="course-badge" id="cdpBadge"></span>
+        <h1 id="cdpTitle"></h1>
+        <div class="cdp-meta" id="cdpMeta"></div>
+        <p class="cdp-desc" id="cdpDesc"></p>
+        <div class="cdp-price" id="cdpPrice"></div>
+        <div class="cdp-actions">
+          <button class="btn btn-gold btn-lg">Apply Now →</button>
+          <button class="btn btn-outline btn-lg" id="cdpBackBtn">← Back</button>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <script src="scripts.js"></script>
-  </body>
+    <div class="cdp-body">
+      <div class="container">
+        <p class="cdp-section-label">Week-by-Week Curriculum</p>
+        <div class="week-accordion" id="cdpWeeks"></div>
+        <div class="cdp-highlights">
+          <h3>What you'll walk away with</h3>
+          <ul id="cdpHighlights"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="course-data.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    // ── Full-page variant ──
+    const detailPage = document.getElementById('courseDetailPage');
+    const cdpBack = document.getElementById('cdpBack');
+    const cdpBackBtn = document.getElementById('cdpBackBtn');
+
+    function openCoursePage(courseId) {
+      const c = COURSES.find(x => x.id === courseId);
+      if (!c) return;
+
+      document.getElementById('cdpBadge').textContent = c.badge;
+      document.getElementById('cdpTitle').textContent = c.title;
+      document.getElementById('cdpPrice').textContent = c.price;
+      document.getElementById('cdpDesc').textContent = c.desc;
+
+      document.getElementById('cdpMeta').innerHTML =
+        `<span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>${c.duration}</span>
+         <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>${c.cohort}</span>`;
+
+      // Build accordion weeks
+      const weeksEl = document.getElementById('cdpWeeks');
+      weeksEl.innerHTML = c.weeks.map((w, i) =>
+        `<div class="week-acc-item" data-index="${i}">
+          <button class="week-acc-trigger" aria-expanded="false">
+            <span class="week-acc-num">W${i+1}</span>
+            <span class="week-acc-title">${w.title}</span>
+            <svg class="week-acc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="week-acc-content">
+            <p>${w.detail}</p>
+          </div>
+        </div>`
+      ).join('');
+
+      // Accordion toggle
+      weeksEl.querySelectorAll('.week-acc-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.week-acc-item');
+          const isOpen = item.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen);
+        });
+      });
+
+      // Open first week by default
+      const first = weeksEl.querySelector('.week-acc-item');
+      if (first) {
+        first.classList.add('open');
+        first.querySelector('.week-acc-trigger').setAttribute('aria-expanded', 'true');
+      }
+
+      // Highlights
+      document.getElementById('cdpHighlights').innerHTML =
+        c.highlights.map(h => `<li>${h}</li>`).join('');
+
+      detailPage.classList.add('open');
+      detailPage.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCoursePage() {
+      detailPage.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    cdpBack.addEventListener('click', closeCoursePage);
+    cdpBackBtn.addEventListener('click', closeCoursePage);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCoursePage(); });
+
+    // Attach to course cards
+    document.querySelectorAll('.course-card').forEach(card => {
+      const courseId = card.dataset.course;
+      card.addEventListener('click', () => openCoursePage(courseId));
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openCoursePage(courseId); });
+    });
+  </script>
+</body>
 </html>
