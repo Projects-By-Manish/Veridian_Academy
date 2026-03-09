@@ -64,6 +64,17 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         observer.observe(el);
       }
     });
+
+  // Trigger hero animations on page load
+  setTimeout(() => {
+    document
+      .querySelectorAll(
+        ".hero .anim-fade-up, .hero .anim-fade-left, .hero .anim-fade-right",
+      )
+      .forEach((el) => {
+        el.classList.add("visible");
+      });
+  }, 50);
 } else {
   // Make everything visible immediately for reduced-motion users
   document
