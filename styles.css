@@ -1192,8 +1192,8 @@ a:focus-visible {
   padding: 1rem 0;
 }
 .cdp-navbar .container {
-  display: flex;
-  align-items: center;
+  display: flex-start;
+  align-items: start;
   gap: 1rem;
 }
 .cdp-back {
